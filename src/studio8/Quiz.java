@@ -25,7 +25,18 @@ public class Quiz {
 		return sum;
 	}
 	
+	
 	public void takeQuiz() {
+		int totPoints=0;
+		for (int i=0;i<questions.length;i++) {
+			questions[i].displayPrompt();
+			String x = getUserAnswer();
+			//questions[i].checkAnswer(getUserAnswer());
+			totPoints+=questions[i].checkAnswer(x);
+			System.out.println(questions[i].checkAnswer(x));
+		}
+		System.out.println("total points: "+totPoints+"/"+getTotalPoints());
+		
 		//FIXME
 	}
 	
